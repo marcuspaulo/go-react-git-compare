@@ -1,5 +1,11 @@
 # GoReact - Módulo 2
 
+#Tela com a lista de Repositórios do Github
+![Lista de Repositórios](/imagens/repository.png)
+
+#Tela com a mensagem de erro
+![Mensagem de Erro](/imagens/error.png)
+
 #Instalação recomenda para gerenciamento de pacotes: Yarn https://yarnpkg.com/pt-BR/docs/install#windows-stable
 
 Instalar através do Chocolatey
