@@ -163,6 +163,30 @@ const App = () => (
 export default App;
 ```
 
+#Instalando a biblioteca para requisições REST (API)
+
+```sh
+$ yarn add axios
+```
+
+#Instalando a dependência para validação PropTypes
+
+```sh
+$ yarn add prop-types
+```
+
+#Instalando o Moment (para trabalhar com datas)
+
+```sh
+$ yarn add moment
+```
+
+#Instalando o Font-awesome (Inclusive para utilizar no loading)
+
+```sh
+$ yarn add font-awesome
+```
+
 ---
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

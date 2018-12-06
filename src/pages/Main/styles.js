@@ -1,16 +1,13 @@
-import React from 'react';
 import styled from 'styled-components';
 
-import logo from '../assets/logo.png';
-
-const Container = styled.div`
+export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 60px;
 `;
 
-const Form = styled.form`
+export const Form = styled.form`
   margin-top: 20px;
   width: 100%;
   max-width: 400px;
@@ -21,13 +18,15 @@ const Form = styled.form`
     height: 55px;
     padding: 0 20px;
     background: #fff;
-    border: 0;
     font-size: 18px;
     color: #444;
     border-radius: 3px;
+
+    border: ${props => (props.withError ? '2px solid #F00' : 0)};
   }
 
   button {
+    width: 80px;
     height: 55px;
     padding: 0 20px;
     margin-left: 10px;
@@ -42,17 +41,22 @@ const Form = styled.form`
       background: #52d89f;
     }
   }
+
+  button[disabled] {
+    cursor: no-drop;
+    background: #c9c9c9;
+  }
 `;
 
-const Main = () => (
-  <Container>
-    <img src={logo} alt="Github Compare" />
-
-    <Form>
-      <input type="text" placeholder="usuário/repositório" />
-      <button type="submit">OK</button>
-    </Form>
-  </Container>
-);
-
-export default Main;
+export const ErrorClass = styled.div`
+  background: #bf47ff;
+  border-radius: 4px solid #f00;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 30px;
+  margin-top: 10px;
+  color: #fff;
+  font-weight: bold;
+  padding: 12px 20px;
+`;
