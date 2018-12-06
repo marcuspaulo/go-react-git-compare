@@ -1,3 +1,170 @@
+# GoReact - Módulo 2
+
+#Instalação recomenda para gerenciamento de pacotes: Yarn https://yarnpkg.com/pt-BR/docs/install#windows-stable
+
+Instalar através do Chocolatey
+O Chocolatey é um gerenciador de pacotes para Windows. Você pode instalar o Chocolatey seguindo este guia.
+
+Assim que você tiver instalado o Chocolatey, você pode instalar o Yarn executando o seguinte código no console:
+
+```sh
+$ choco install yarn
+```
+
+#Instalando o Yarn no macOS
+
+Homebrew
+Você pode instalar Yarn através do gerenciador de pacotes Homebrew.
+
+```sh
+$ brew install yarn
+```
+
+Você pode usar soluções como nvm ou similares, você deve evitar installar o Node.js diretamente, para a versão do Node.js instalada pelo nvm ser usada.
+
+```sh
+$ brew install yarn --without-node
+```
+
+---
+
+#Criando um projeto em ReactJS (através do CLI)
+
+#Instalando o create-react-app
+
+```sh
+$ yarn global add create-react-app
+```
+
+#Criando o projeto com o create-react-app
+
+```sh
+$ create-react-app goreact-modulo2
+```
+
+#iniciando a aplicação
+
+```sh
+$ yarn start
+```
+
+---
+
+#Configurações iniciais
+
+# 1 - Remover os seguintes arquivos:
+
+1 - App.css, index.css
+2 - App.test.js
+3 - logo.svg
+4 - registerServiceWorkers
+
+# Ajustar os imports dos arquivos index.js e App.js
+
+---
+
+# Ajustando o eslint Airbnb (Desenvolvimento)
+
+```sh
+$ yarn add eslint-config-airbnb eslint-plugin-import eslint-plugin-jsx-a11y eslint-plugin-react -D
+```
+
+```json
+{
+    "parser": "babel-eslint",
+    "extends": "airbnb",
+    "env": {
+        "browser": true,
+        "jest": true
+    },
+    "plugins": ["react", "jsx-a11y", "import"],
+    "rules": {
+        "react/jsx-filename-extension": [
+            "error",
+            {
+                "extensions": [".js", ".jsx"]
+            }
+        ],
+        "global-require": "off",
+        "import/prefer-default-export": "off",
+        "no-unused-vars": [
+            "error",
+            {
+                "argsIgnorePattern": "^_"
+            }
+        ]
+    }
+}
+```
+
+---
+
+# Criar o arquivo .editorconfig
+
+```js
+root = true
+
+[*]
+indent_style = space
+indent_size = 4
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+```
+
+---
+
+# Instalando as dependências de estilo (Styled-components) - Ferramenta mais adotada pela comunidade
+
+#Instalando o styled-components
+
+```sh
+$ yarn add styled-components
+```
+
+# Instale a extensão do vscode-styled-components no Visual Code
+
+#Exemplo styled components
+
+```js
+import React from "react";
+import styled from "styled-components";
+
+const Title = styled.h1`
+    color: #f00;
+    font-size: 32px;
+`;
+
+const App = () => (
+    <div className="App">
+        <Title>Git Compare</Title>
+    </div>
+);
+
+export default App;
+```
+
+---
+
+# Estilizando com o estilo Global (styles/global.js)
+
+```js
+import React, { Fragment } from "react";
+
+import GlobalStyle from "./styles/global";
+
+const App = () => (
+    <Fragment>
+        <GlobalStyle />
+        <div className="App" />
+    </Fragment>
+);
+
+export default App;
+```
+
+---
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
